@@ -1,0 +1,61 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-title> Atualizar </ion-title>
+    <ion-icon name="close" slot="end" size="larger" class="ion-padding" (click)="dismis()"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content  >
+  <ion-card  >
+    <ion-item lines="none" >
+      <ion-textarea [(ngModel)]="itemName"  placeholder="Digite aqui o'que gostaria de alterar"></ion-textarea>
+   </ion-item>
+ 
+   <ion-item lines="none" >
+    <ion-icon name="bookmarks-outline"slot="start"></ion-icon>
+    <ion-label >Tópicos </ion-label>
+    <ion-textarea [(ngModel)]="itemTopic"  placeholder="Separe por parágrafos para uma melhor leitura!">
+        
+    </ion-textarea>
+    
+  </ion-item>
+   
+   <ion-item lines="none" >
+    <ion-icon name="heart-outline" slot="start"  ></ion-icon>
+     <ion-label >Prioridade</ion-label>
+     <ion-select [(ngModel)]="itemPriority">
+       <ion-select-option value="low">Baixo</ion-select-option>
+       <ion-select-option value="middle">Média</ion-select-option>
+       <ion-select-option value="high" selected>Alta</ion-select-option>
+      </ion-select>
+   </ion-item>
+  
+   <ion-item lines="none" >
+     <ion-icon name="calendar-outline"slot="start"></ion-icon>
+     <ion-label >Data limite</ion-label>
+     <ion-datetime [(ngModel)]="itemDueDate"  displayFormat="D MMM YYYY H:mm"></ion-datetime>
+   </ion-item>
+ 
+
+   <ion-item lines="none" >
+     <ion-icon name="pricetag-outline" slot="start"></ion-icon>
+     <ion-label> Categoria</ion-label>
+     <span>{{categorySelectedCategory}}</span>
+   </ion-item>
+ 
+   <ion-item lines="none" >
+     <ion-chip  *ngFor="let tag of categories; let i = index" color="secondary" outline="true" (click)="selectCategory(i)">
+       <ion-label color="secondary">{{tag}}</ion-label>
+     </ion-chip>
+ 
+     
+   </ion-item  >
+
+   <ion-button class="ion-margin" expand="block" (click)="update()">Atualizar tarefa</ion-button>
+
+  </ion-card>
+ 
+
+
+</ion-content>

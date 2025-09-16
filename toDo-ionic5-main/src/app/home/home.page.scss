@@ -1,0 +1,52 @@
+
+ ion-content p{
+   font-weight: 300;
+  }
+
+
+.menu-item {
+--background: #ffffff;
+
+}
+
+.menu-conteudo{
+--background:#ffffff
+
+}
+
+.menu-ion-it{
+ justify-content: center;
+
+}
+
+.background{
+  --background: url(../../assets/img/novoi.png) 0 0/100% 100% no-repeat;
+}
+
+.botao{
+  color: rgb(124, 163, 163);
+  
+}
+
+ion-app {
+  .scroll-content {
+      // prevent scrollbars from showing up in desktop browsers
+      // in the side-menu and in the main content window
+      overflow-y: auto;
+  }
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.radial{
+  --size: 1em ;
+
+}
+
+.jesus{
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  
+}

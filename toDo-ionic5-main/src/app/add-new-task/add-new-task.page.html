@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="padding-top: 0.5em; margin-bottom: -0.5em; ">
+    <ion-title>Adicionar uma tarefa</ion-title>
+    <ion-icon name="close" slot="end" size="larger"  class="ion-padding" (click)="dismis()"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content >
+  <ion-card class="ion-align-self-center" >
+    <ion-item lines="none" >
+      <ion-textarea style="padding-top: 1.5em; padding-bottom: -0.6; " [(ngModel)]="itemName" class="ion-text-center" placeholder="Comece digitando aqui!">
+        
+      </ion-textarea>
+   </ion-item>
+ 
+   
+   <ion-item lines="none"  >
+    <ion-icon name="bookmarks-outline"slot="start"></ion-icon>
+    <ion-label  >Tópicos </ion-label>
+    <ion-textarea style="padding-left: 1em; padding-bottom: 1.5em; "  no-margin rows="2"  [(ngModel)]="itemTopic" 
+            placeholder="Separe por parágrafos para uma melhor leitura!">
+        
+    </ion-textarea>
+    
+  </ion-item>
+
+
+   <ion-item  lines="none" >
+    <ion-icon name="heart-outline" slot="start"  ></ion-icon>
+     <ion-label>Prioridade</ion-label>
+     <ion-select  [(ngModel)]="itemPriority">
+       <ion-select-option value="low">Baixa</ion-select-option>
+       <ion-select-option value="middle">Média</ion-select-option>
+       <ion-select-option value="high" selected>Alta</ion-select-option>
+      </ion-select>
+   </ion-item>
+  
+   <ion-item lines="none" >
+     <ion-icon name="calendar-outline"slot="start"></ion-icon>
+     <ion-label >Data Limite </ion-label>
+     <ion-datetime  [(ngModel)]="itemDueDate"  min="2021" max="2040" displayFormat="D MMM YYYY H:mm"></ion-datetime>
+   </ion-item>
+ 
+
+   <ion-item lines="none" >
+     <ion-icon name="pricetag-outline" slot="start"></ion-icon>
+     <ion-label> Categoria</ion-label>
+     <span>{{categorySelectedCategory}}</span>
+   </ion-item>
+ 
+   <ion-item style="padding-top: 1em;" lines="none" >
+     <ion-chip  *ngFor="let tag of categories; let i = index" color="secondary"
+                 outline="true" (click)="selectCategory(i)">
+       <ion-label color="secondary">{{tag}}</ion-label>
+     </ion-chip>
+ 
+     
+   </ion-item  >
+
+   <ion-button  class="botao" class="ion-margin" expand="block" (click)="add()">Adicionar tarefa</ion-button>
+
+  </ion-card>
+ 
+
+
+</ion-content>
